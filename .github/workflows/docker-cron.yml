@@ -25,4 +25,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
+          push: true
           tags: ghcr.io/red-coracle/electrumx:latest
