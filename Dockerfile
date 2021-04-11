@@ -7,7 +7,7 @@ ARG VERSION=1.16.0
 
 RUN chmod a+x /usr/local/bin/* && \
     apk add --no-cache --virtual .build-deps git build-base openssl && \
-    apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing rocksdb-dev && \
+    apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing rocksdb rocksdb-dev && \
     pip install --no-cache-dir --no-binary ':all:' --compile aiohttp pylru websockets python-rocksdb uvloop ujson && \
     git clone -b $VERSION https://github.com/spesmilo/electrumx.git && \
     cd electrumx && \
